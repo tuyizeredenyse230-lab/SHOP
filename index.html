@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a63b78">
+  <meta name="description" content="Denyse Shop — phones, tablets and electronics in Kigali, Rwanda.">
+  <title>Denyse Shop | Kigali phones & electronics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="products.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Denyse Shop home"><span class="brand-mark">D</span><span>Denyse <b>Shop</b></span></a>
+    <form class="header-search" action="shop.html" role="search">
+      <label class="sr-only" for="search-input">Search products</label>
+      <input id="search-input" name="q" type="search" placeholder="Search phones, electronics..." autocomplete="off">
+      <button class="search-button" aria-label="Search">⌕</button>
+    </form>
+    <div class="header-actions">
+      <a class="header-icon-link" href="cart.html" aria-label="Shopping cart">♡<span class="cart-count" data-cart-count>0</span></a>
+      <a class="header-icon-link account-icon" href="account.html" aria-label="My account">♙</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <span class="eyebrow">YOUR KIGALI TECH STORE</span>
+        <h1>A little more<br><em>joy in every day.</em></h1>
+        <p>Find the phone, tablet and everyday tech that feels just right. Personal service from Denyse Shop, Kigali.</p>
+        <div class="hero-actions"><a class="button button-primary" href="shop.html">Explore the shop <span aria-hidden="true">→</span></a><a class="hero-call" href="https://wa.me/250794753660" target="_blank" rel="noopener">Talk to Denyse <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-trust"><span>♡</span> Thoughtfully selected tech <i></i><span>⌖</span> Kigali delivery</div>
+      </div>
+      <div class="home-hero-art" aria-hidden="true">
+        <div class="hero-art-circle"></div><div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=85" alt="">
+        <span class="hero-art-label">A GOOD<br>CHOICE</span>
+      </div>
+    </section>
+
+    <section class="category-dashboard page-width" aria-labelledby="categories-title">
+      <div class="section-heading"><div><span class="eyebrow">THE DENYSE SHOP DASHBOARD</span><h2 id="categories-title">What are you looking for?</h2></div><a class="text-link" href="shop.html">All products <span aria-hidden="true">→</span></a></div>
+      <div class="category-dashboard-grid" id="category-dashboard"></div>
+    </section>
+
+    <section class="collection-section page-width">
+      <div class="section-heading"><div><span class="eyebrow">CUSTOMER FAVOURITES</span><h2>Best Sellers</h2></div><a class="text-link" href="shop.html?sort=popular">Shop all <span aria-hidden="true">→</span></a></div>
+      <div class="product-grid product-grid-home" id="best-seller-grid"></div>
+    </section>
+
+    <section class="new-arrivals-section">
+      <div class="page-width">
+        <div class="section-heading"><div><span class="eyebrow">FRESH FINDS</span><h2>New Arrivals</h2></div><a class="text-link" href="shop.html?sort=newest">Discover more <span aria-hidden="true">→</span></a></div>
+        <div class="product-grid product-grid-home" id="new-arrival-grid"></div>
+      </div>
+    </section>
+
+    <section class="discount-section page-width">
+      <div class="discount-intro"><span class="discount-seal">−20%</span><div><span class="eyebrow">A LITTLE TREAT</span><h2>Discount −20%</h2><p>Lovely finds, a little lighter on your wallet.</p></div><a class="button button-light" href="shop.html?offer=20">See the offers <span aria-hidden="true">→</span></a></div>
+      <div class="product-grid product-grid-home" id="discount-grid"></div>
+      <p class="discount-note">Offer display uses the listed product prices as sale prices. Confirm current offers with Denyse.</p>
+    </section>
+
+    <section class="contact-banner page-width"><div><span class="eyebrow">HERE FOR YOU</span><h2>Good tech, good people.</h2><p>Have a question? Denyse is just a message away.</p></div><a class="button button-primary" href="https://wa.me/250794753660" target="_blank" rel="noopener">Chat on WhatsApp ↗</a></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">D</span><span>Denyse <b>Shop</b></span></a><p>Thoughtful tech, right here in Kigali.</p><div class="footer-links"><a href="account.html">My Account</a><a href="admin.html">Admin dashboard</a><a href="system-design.html">How an order travels</a><a href="tel:+250794753660">+250 794 753 660</a></div><small>© <span data-year></span> Denyse Shop · Kigali, Rwanda</small></footer>
+  <nav class="mobile-nav" aria-label="Main navigation"><a class="active" href="index.html"><span>⌂</span>Home</a><a href="shop.html"><span>▦</span>Shop</a><a href="cart.html"><span>♡<i class="nav-cart-count" data-cart-count>0</i></span>Cart</a><a href="account.html#orders"><span>▤</span>My Orders</a><a href="account.html"><span>♙</span>Account</a></nav>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8fb">
+  <meta name="description" content="An interactive, animated tour of how a Denyse Shop request, order, and growing traffic can travel through a web system.">
+  <title>How Your Order Travels | Denyse Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="system-design.css">
+  <script src="system-design.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="top-brand" href="index.html" aria-label="Denyse Shop home"><span class="brand-icon">D</span><span>Denyse Shop</span></a>
+    <div class="top-context"><span class="live-dot"></span> SYSTEM DESIGN LAB <span class="context-divider">/</span> KIGALI, RWANDA</div>
+    <a class="back-to-shop" href="index.html">Back to shop <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="experience">
+    <section class="intro">
+      <div>
+        <p class="kicker"><span class="kicker-line"></span> A LITTLE JOURNEY THROUGH THE INTERNET</p>
+        <h1 id="lesson-title">How a Request Travels</h1>
+        <p class="intro-copy" id="lesson-subtitle">A tap on your phone sets a whole system in motion. Follow the little packet.</p>
+      </div>
+      <div class="progress-readout">
+        <span class="mono-label">JOURNEY PROGRESS</span>
+        <strong><span id="progress-number">01</span><span class="progress-slash"> / </span><span id="progress-total">10</span></strong>
+        <div class="progress-track" role="progressbar" aria-label="Lesson progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" id="progress-track"><span id="progress-fill"></span></div>
+      </div>
+    </section>
+
+    <nav class="lesson-switcher" aria-label="Choose a system design lesson">
+      <button class="lesson-tab active" type="button" data-lesson="request"><span class="lesson-index">01</span><span><b>How a request travels</b><small>Phone → product page</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+      <button class="lesson-tab" type="button" data-lesson="order"><span class="lesson-index">02</span><span><b>How an order travels</b><small>Cart → Kigali delivery</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+      <button class="lesson-tab" type="button" data-lesson="scale"><span class="lesson-index">03</span><span><b>How Denyse Shop scales</b><small>One shop → 1,000 visitors</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+    </nav>
+
+    <section class="journey-grid" aria-label="Interactive system walkthrough">
+      <div class="diagram-card">
+        <div class="diagram-heading">
+          <div><span class="mono-label">LIVE SYSTEM MAP</span><h2 id="diagram-title">From a phone to a product</h2></div>
+          <div class="diagram-heading-aside"><span class="diagram-hint">SWIPE MAP →</span><span class="simulation-badge"><span class="live-dot"></span> SIMULATION</span></div>
+        </div>
+        <div class="diagram-wrap">
+          <div class="grid-glow" aria-hidden="true"></div>
+          <svg id="system-diagram" viewBox="0 0 900 565" role="img" aria-label="Isometric diagram showing a customer phone, DNS, CDN, cache, load balancer, server, database, payment, SMS and delivery systems">
+            <defs>
+              <pattern id="floor-grid" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="skewY(-28) scale(1 .82)">
+                <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#e9eef4" stroke-width="1"></path>
+              </pattern>
+              <filter id="packet-glow" x="-300%" y="-300%" width="700%" height="700%">
+                <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+                <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+              </filter>
+            </defs>
+            <rect x="0" y="0" width="900" height="565" fill="url(#floor-grid)"></rect>
+            <g id="wire-layer" aria-hidden="true"></g>
+            <g id="packet-layer" aria-hidden="true"></g>
+            <g id="block-layer"></g>
+            <g id="packet-label" class="packet-label" aria-hidden="true"><rect x="0" y="0" width="166" height="29" rx="6"></rect><text x="12" y="19">GET /product/samsung-a15</text></g>
+            <g id="distance-label" class="distance-label" aria-hidden="true"><rect x="0" y="0" width="142" height="28" rx="6"></rect><text x="12" y="18">KIGALI EDGE · 40 ms</text></g>
+          </svg>
+          <div class="map-caption"><span class="map-caption-dot"></span><span id="map-caption-text">A product request, moving through the system</span></div>
+        </div>
+        <div class="diagram-legend"><span><i class="legend-line"></i> Request path</span><span><i class="legend-packet"></i> Data packet</span><span><i class="legend-active"></i> Active system</span><span class="diagram-location">Kigali, Rwanda <span aria-hidden="true">⌖</span></span></div>
+      </div>
+
+      <aside class="explanation-card" aria-live="polite">
+        <div class="explanation-top"><span class="step-tag" id="step-tag">STEP 01</span><span class="step-time"><span aria-hidden="true">◷</span> <b id="step-time">0 ms</b></span></div>
+        <h2 id="step-heading">Hit Enter</h2>
+        <p class="step-description" id="step-description"></p>
+        <div class="step-visual" id="step-visual"></div>
+        <div class="step-footnote"><span class="footnote-mark">i</span><span id="step-footnote">The route is a teaching model, not a live network trace.</span></div>
+      </aside>
+    </section>
+
+    <section class="timeline-card" aria-label="Simulated journey timing">
+      <div class="timeline-top">
+        <div><span class="mono-label">SIMULATED ROUND-TRIP</span><p id="timeline-caption">A fast product lookup, with cache and a nearby edge.</p></div>
+        <div class="latency-total"><strong id="latency-value">0</strong><span>ms</span><small>modeled latency</small></div>
+      </div>
+      <div class="timeline-track" id="timeline-track" role="img" aria-label="Simulated request latency timeline"><span class="timeline-progress" id="timeline-progress"></span><i class="timeline-marker" id="timeline-marker"></i></div>
+      <div class="timeline-labels"><span>Request begins</span><span id="timeline-mid-label">Looking up the product</span><span>Response arrives</span></div>
+      <div class="recap-chart hidden" id="recap-chart" aria-label="Latency breakdown by system step"></div>
+    </section>
+
+    <section class="step-controls" aria-label="Lesson controls">
+      <div class="step-picker">
+        <span class="mono-label">JUMP TO STEP</span>
+        <div class="step-buttons" id="step-buttons" role="group" aria-label="Choose a lesson step"></div>
+      </div>
+      <div class="playback">
+        <button class="control-button control-prev" id="previous-button" type="button"><span aria-hidden="true">←</span> Previous</button>
+        <button class="control-button control-play" id="play-button" type="button"><span class="play-symbol" aria-hidden="true">▶</span><span id="play-label">Play</span></button>
+        <button class="control-button control-replay" id="replay-button" type="button" aria-label="Replay lesson" title="Replay lesson">↺</button>
+        <button class="control-button control-next" id="next-button" type="button">Next <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <footer class="lab-footer">
+      <p>This is a conceptual system-design tour. Payment, SMS, DNS, and server blocks illustrate a possible production architecture; this static shop does not connect to those services.</p>
+      <div><a href="tel:+250794753660">Call Denyse: 0794753660</a><a href="https://wa.me/250794753660" target="_blank" rel="noopener">WhatsApp Denyse <span aria-hidden="true">↗</span></a></div>
+    </footer>
+  </main>
+  <div class="sr-status" id="live-status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

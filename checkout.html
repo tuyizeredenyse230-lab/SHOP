@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#a63b78"><title>Checkout | Denyse Shop</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="products.js" defer></script><script src="script.js" defer></script></head>
+<body data-page="checkout">
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">D</span><span>Denyse <b>Shop</b></span></a><span class="checkout-header-note">A lovely choice, nearly yours</span><div class="header-actions"><a class="header-icon-link" href="cart.html" aria-label="Shopping cart">♡<span class="cart-count" data-cart-count>0</span></a><a class="header-icon-link account-icon" href="account.html" aria-label="My account">♙</a></div></header>
+  <main class="subpage-main"><p class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</p><h1 class="page-title">Almost yours</h1>
+    <div class="checkout-layout"><form class="panel checkout-form" id="checkout-form">
+      <section class="delivery-section"><div class="checkout-section-heading"><div><span class="eyebrow">DELIVERY IN KIGALI</span><h2>Delivery Details</h2></div><a class="text-link" id="edit-delivery-link" href="account.html">Edit</a></div>
+        <div id="delivery-summary"></div>
+        <div id="guest-delivery" class="hidden"><p class="guest-hint">Add your delivery details. <a href="account.html">Create an account</a> to save them for next time.</p><div class="form-grid">
+          <div class="form-field full"><label for="guest-name">Full Name *</label><input class="form-control" id="guest-name" name="name" autocomplete="name"></div>
+          <div class="form-field"><label for="guest-phone">Phone Number *</label><input class="form-control" id="guest-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></div>
+          <div class="form-field"><label for="guest-whatsapp">WhatsApp Number</label><input class="form-control" id="guest-whatsapp" name="whatsapp" type="tel" inputmode="tel"></div>
+          <div class="form-field full"><label for="guest-email">Email</label><input class="form-control" id="guest-email" name="email" type="email" autocomplete="email"></div>
+          <div class="form-field"><label for="guest-district">District *</label><select class="form-control" id="guest-district" name="district"><option value="">Choose district</option><option>Gasabo</option><option>Kicukiro</option><option>Nyarugenge</option><option>Other</option></select></div>
+          <div class="form-field"><label for="guest-sector">Sector / Cell</label><input class="form-control" id="guest-sector" name="sector"></div>
+          <div class="form-field full"><label for="guest-address">Full Address *</label><textarea class="form-control" id="guest-address" name="address"></textarea></div>
+          <div class="form-field full"><label for="guest-note">Delivery Note</label><input class="form-control" id="guest-note" name="note" placeholder="e.g. Near Kigali Market"></div>
+        </div></div>
+      </section>
+      <section class="payment-section"><h2>Choose payment</h2><div class="payment-options">
+        <label class="payment-option"><input type="radio" name="payment" value="MTN MoMo" required> <span class="payment-logo mtn-logo">M</span><span>MTN MoMo<small>Pay to Denyse Shop · 0794753660</small></span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Airtel Money"> <span class="payment-logo airtel-logo">A</span><span>Airtel Money<small>Confirm payment with Denyse</small></span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Cash on Delivery"> <span class="payment-logo cash-logo">♡</span><span>Cash on Delivery<small>Pay when your order arrives</small></span></label>
+      </div><div class="notice hidden" id="payment-notice" role="status"></div><div class="privacy-notice compact-notice"><strong>Payment safety</strong><span>This static website does not process mobile-money payments and never asks for your PIN.</span></div></section>
+      <button class="button button-primary full-width place-order-button" type="submit">Place My Order <span aria-hidden="true">→</span></button>
+    </form><aside class="panel checkout-summary-panel" id="checkout-summary"></aside></div>
+  </main>
+  <dialog class="payment-dialog" id="payment-dialog" aria-labelledby="payment-dialog-title"><h2 id="payment-dialog-title">Mobile money payment</h2><p id="payment-dialog-message"></p><button class="button button-primary" type="button" onclick="document.getElementById('payment-dialog').close()">Got it</button></dialog>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">D</span><span>Denyse <b>Shop</b></span></a><p>Questions? <a href="tel:+250794753660">Call Denyse: 0794753660</a></p><small>© <span data-year></span> Denyse Shop · Kigali, Rwanda</small></footer>
+  <nav class="mobile-nav" aria-label="Main navigation"><a href="index.html"><span>⌂</span>Home</a><a href="shop.html"><span>▦</span>Shop</a><a class="active" href="cart.html"><span>♡<i class="nav-cart-count" data-cart-count>0</i></span>Cart</a><a href="account.html#orders"><span>▤</span>My Orders</a><a href="account.html"><span>♙</span>Account</a></nav>
+</body></html>
