@@ -763,6 +763,7 @@
   }
   var ADMIN_PASSWORD_SALT = "54175810a6ad90febf5058590ce3d651";
   var ADMIN_PASSWORD_HASH = "3d53355d95373651c7dc8d185093fb39d6f5f6091fa7987f7c140616563b4932";
+  var ADMIN_SESSION_KEY = "denyse_admin_unlocked_v1";
   function hexToBytes(hex) {
     var bytes = new Uint8Array(hex.length / 2);
     for (var index = 0; index < bytes.length; index += 1) bytes[index] = parseInt(hex.slice(index * 2, index * 2 + 2), 16);
@@ -792,22 +793,39 @@
     var loginScreen = document.getElementById("admin-login");
     var adminContent = document.getElementById("admin-content");
     if (!form || !input || !errorMessage || !loginScreen || !adminContent) return;
+    function unlockAdmin() {
+      input.value = "";
+      loginScreen.hidden = true;
+      adminContent.hidden = false;
+      document.body.dataset.page = "admin";
+      setupAdmin();
+    }
+    try {
+      if (window.sessionStorage.getItem(ADMIN_SESSION_KEY) === "1") {
+        unlockAdmin();
+        return;
+      }
+    } catch (error) {
+      console.error("Could not read the admin session in this tab.", error);
+    }
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       errorMessage.hidden = true;
       form.querySelector('button[type="submit"]').disabled = true;
-      verifyAdminPassword(input.value).then(function (isCorrect) {
+      verifyAdminPassword(input.value.trim()).then(function (isCorrect) {
         if (!isCorrect) {
-          errorMessage.textContent = "Password si yo!";
+          errorMessage.textContent = "Wrong password, try again";
           errorMessage.hidden = false;
           input.focus();
           return;
         }
-        input.value = "";
-        loginScreen.hidden = true;
-        adminContent.hidden = false;
-        document.body.dataset.page = "admin";
-        setupAdmin();
+        try {
+          window.sessionStorage.setItem(ADMIN_SESSION_KEY, "1");
+        } catch (error) {
+          console.error("Could not save the admin session in this tab.", error);
+          toast("Signed in, but this tab could not remember your session. Keep this tab open.");
+        }
+        unlockAdmin();
       }).catch(function (error) {
         console.error("Could not verify the admin password.", error);
         errorMessage.textContent = "Password check unavailable. Open this page over HTTPS and try again.";

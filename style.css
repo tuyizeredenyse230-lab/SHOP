@@ -28,6 +28,10 @@ img { display: block; max-width: 100%; }
 .hidden { display: none !important; }
 .page-width { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
 .site-header { height: 76px; padding: 0 max(24px, calc((100vw - 1180px)/2)); display: flex; align-items: center; gap: 30px; border-bottom: 1px solid #f4eff3; background: rgba(255,255,255,.97); position: sticky; top: 0; z-index: 20; }
+.language-switcher { display:flex; align-items:center; gap:2px; flex:0 0 auto; padding:3px; border:1px solid var(--line); border-radius:9px; background:var(--soft); }
+.language-switcher button { min-height:32px; padding:0 8px; border:0; border-radius:6px; color:var(--muted); background:transparent; font-size:10px; font-weight:600; white-space:nowrap; }
+.language-switcher button + button { border-left:1px solid var(--line); }
+.language-switcher button[aria-pressed="true"] { color:var(--berry-dark); background:var(--berry-light); }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 500; white-space: nowrap; }
 .brand b { color: var(--berry); font-weight: 700; }
 .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; color: white; font-family: "Playfair Display", serif; font-size: 23px; border-radius: 12px 12px 12px 4px; background: var(--berry); }
@@ -197,6 +201,9 @@ textarea.form-control { height: 82px; resize: vertical; padding-top: 11px; }
   html { scroll-padding-top: 68px; }
   .page-width { width: calc(100% - 30px); }
   .site-header { height: 62px; padding: 0 15px; gap: 12px; }
+  .language-switcher { position:absolute; top:100%; left:0; right:0; justify-content:center; padding:3px 8px; border:0; border-bottom:1px solid var(--line); border-radius:0; background:rgba(255,255,255,.97); }
+  .language-switcher button { min-height:30px; padding:0 11px; font-size:10px; }
+  .site-header.has-language-switcher { margin-bottom:36px; }
   .brand { gap: 7px; font-size: 16px; }
   .brand-mark { width: 31px; height: 31px; font-size: 20px; }
   .header-search { height: 36px; }
@@ -420,6 +427,7 @@ textarea.form-control { height: 82px; resize: vertical; padding-top: 11px; }
 .checkout-delivery-note { margin-top:18px; padding:12px; border-radius:7px; color:var(--berry-dark); background:var(--berry-light); font-size:10px; }
 .checkout-summary-panel { position:sticky; top:95px; }
 .admin-login-page { width:min(440px,calc(100% - 32px)); min-height:calc(100vh - 76px); margin:0 auto; display:grid; align-items:center; padding:38px 0; }
+.admin-login-page[hidden] { display:none !important; }
 .admin-login-card { width:100%; padding:26px; border:1px solid #f0e5ed; border-radius:12px; background:white; box-shadow:var(--shadow); }
 .admin-login-card h1 { margin:8px 0 10px; font-family:"Playfair Display",serif; font-size:30px; }
 .admin-login-card > p { color:var(--muted); font-size:12px; line-height:1.6; }
