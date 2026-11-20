@@ -419,6 +419,15 @@ textarea.form-control { height: 82px; resize: vertical; padding-top: 11px; }
 .compact-notice { margin-top:12px; margin-bottom:0; }
 .checkout-delivery-note { margin-top:18px; padding:12px; border-radius:7px; color:var(--berry-dark); background:var(--berry-light); font-size:10px; }
 .checkout-summary-panel { position:sticky; top:95px; }
+.admin-login-page { width:min(440px,calc(100% - 32px)); min-height:calc(100vh - 76px); margin:0 auto; display:grid; align-items:center; padding:38px 0; }
+.admin-login-card { width:100%; padding:26px; border:1px solid #f0e5ed; border-radius:12px; background:white; box-shadow:var(--shadow); }
+.admin-login-card h1 { margin:8px 0 10px; font-family:"Playfair Display",serif; font-size:30px; }
+.admin-login-card > p { color:var(--muted); font-size:12px; line-height:1.6; }
+.admin-login-form { display:grid; gap:10px; margin:20px 0 14px; }
+.admin-login-form label { font-size:12px; font-weight:700; }
+.admin-login-form .form-control { width:100%; min-height:46px; }
+.admin-login-error { margin:0; color:#a32536; font-size:12px; font-weight:700; }
+.admin-gate-notice { padding:11px; border-radius:7px; color:#6f5b2f !important; background:#fff8e6; }
 .checkout-header-note { margin-left:auto; color:var(--muted); font-size:11px; }
 .place-order-button { min-height:49px; }
 .success-summary-line { margin:18px 0 5px !important; padding:12px; border-radius:8px; background:white; font-size:11px; }
